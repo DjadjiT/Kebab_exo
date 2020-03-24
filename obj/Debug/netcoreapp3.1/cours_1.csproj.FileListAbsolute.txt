@@ -1,3 +1,11 @@
 C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\obj\Debug\netcoreapp3.1\cours_1.csprojAssemblyReference.cache
 C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\obj\Debug\netcoreapp3.1\cours_1.AssemblyInfoInputs.cache
 C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\obj\Debug\netcoreapp3.1\cours_1.AssemblyInfo.cs
+C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\bin\Debug\netcoreapp3.1\cours_1.exe
+C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\bin\Debug\netcoreapp3.1\cours_1.deps.json
+C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\bin\Debug\netcoreapp3.1\cours_1.runtimeconfig.json
+C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\bin\Debug\netcoreapp3.1\cours_1.runtimeconfig.dev.json
+C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\bin\Debug\netcoreapp3.1\cours_1.dll
+C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\bin\Debug\netcoreapp3.1\cours_1.pdb
+C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\obj\Debug\netcoreapp3.1\cours_1.dll
+C:\Users\djxduc\Desktop\cours\s2\DP en c#\cours_1\obj\Debug\netcoreapp3.1\cours_1.pdb

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace cours_1
 {
-    public enum Types {Legume, Meat, Sauce, Fish, SeaFood};
+    public enum Types {Legume, Meat, Sauce, Fish, SeaFood, Fromage};
+
     public class Ingredient{
         public Ingredient(String name, Types type){
             Name = name;
@@ -11,6 +12,18 @@ namespace cours_1
         }
         public string Name { get; set; }
         public Types Type { get; set; }
+
+        public string getName(){
+            return this.Name;
+        }
+        public Types getTypes(){
+            return this.Type;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 
     public class Kebab {
@@ -22,7 +35,7 @@ namespace cours_1
 
         public bool isVegie(){
             for(int i = 0; i<Ingredients.Count; i++){
-                if(Ingredients[i].Type==Type.Viande){
+                if(Ingredients[i].Type==Types.Meat || Ingredients[i].Type==Types.Fish){
                     return false;
                 }
             }
@@ -32,10 +45,10 @@ namespace cours_1
         public bool isPescetarian(){
             bool isVeg=true;;
             for(int i = 0; i<Ingredients.Count; i++){
-                if(Ingredients[i].Type==Type.Viande){
+                if(Ingredients[i].Type==Types.Meat){
                     return false;
                 }
-                if(Ingredients[i].Type==Type.SeaFood ||Ingredients[i].Type==Type.Fish){
+                if(Ingredients[i].Type==Types.SeaFood ||Ingredients[i].Type==Types.Fish){
                     isVeg=false;
                 }
             }
@@ -46,12 +59,34 @@ namespace cours_1
             {
                 for (int i = 0; i < Ingredients.Count; i++)
                 {
-                    if (String.Equals(String.toLower(Ingredients[i].Name),"oignon"))
+                    if (Ingredients[i].getName().Equals("oignon"))
                     {
                         Ingredients.Remove(Ingredients[i]);
                     }
                 }
-                //Return kebab
+                return this;
+            }
+
+        public Kebab suppFromage()
+            {
+                for (int i = 0; i < Ingredients.Count; i++)
+                {
+                    if (Ingredients[i].Type==Types.Fromage)
+                    {
+                        Ingredients.Add(Ingredients[i]);
+                    }
+                }
+                return this;
+            }
+
+        public override string ToString()
+            {
+                string chaine = "";
+                for (int i = 0; i < Ingredients.Count; i++)
+                {
+                    chaine+=Ingredients[i].getName() +"\t"+ Ingredients[i].GetType().ToString()+"\n"; 
+                }
+                return chaine;
             }
     }
     class Program
@@ -59,13 +94,21 @@ namespace cours_1
         static void Main(string[] args)
         {
             Kebab myKeb = new Kebab();
-            myKeb.Ingredients.Add(new Ingredient("salade", Type.Legume));
-            myKeb.Ingredients.Add(new Ingredient("tomate", Type.Legume));
-            myKeb.Ingredients.Add(new Ingredient("oignon", Type.Legume));
-            myKeb.Ingredients.Add(new Ingredient("algerienne", Type.Sauce));
-            myKeb.Ingredients.Add(new Ingredient("Poulet paprika", Type.Viande));
+            myKeb.Ingredients.Add(new Ingredient("salade", Types.Legume));
+            myKeb.Ingredients.Add(new Ingredient("tomate", Types.Legume));
+            myKeb.Ingredients.Add(new Ingredient("oignon", Types.Legume));
+            myKeb.Ingredients.Add(new Ingredient("algerienne", Types.Sauce));
+            myKeb.Ingredients.Add(new Ingredient("oignon", Types.Legume));
+            myKeb.Ingredients.Add(new Ingredient("Saumon", Types.Fish));
+            myKeb.Ingredients.Add(new Ingredient("Cheddar", Types.Fromage));
         
-            Console.WriteLine(myKeb.isVegie());     
+        
+            Console.WriteLine(myKeb.isVegie());    
+            Console.WriteLine(myKeb.isPescetarian());     
+            
+            Console.WriteLine(myKeb.ToString());
+            Console.WriteLine(myKeb.suppFromage().ToString());
+            Console.WriteLine(myKeb.sansOignon().ToString());
         }
     }
 }
